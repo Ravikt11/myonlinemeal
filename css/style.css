@@ -1,0 +1,253 @@
+/* sabse pehli cheez : CSS RESET */
+/* font default margin padding zero */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables*/
+:root{
+    --navbar-height: 59px;
+} 
+
+/* Navigation Bar  */
+#navbar{
+    display: flex; 
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    /* justify-content: center; agr horizontally center krna ho toh */
+}
+
+/* ab ninja technique istemaal krenge before and after selectors waala  */
+#navbar::before{
+    content:"";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    /* content ko iske upar laane k liye use z-index  */
+    z-index: -1;
+    opacity: 0.7; /*light closer to zero..dark k liye close to 1 or more*/
+} 
+/* logo and image  */
+#logo{
+    margin: 10px 34px;
+}
+
+#logo img{
+    margin: 3px 6px;
+    height: 59px;
+}
+
+/* navigation bar : list styling */
+/* flexbox se navigation bar banana easy h  */
+#navbar ul{
+    display: flex; /*sab ek row me aa gye h*/
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+
+#navbar ul li{
+    list-style: none; /*bullets chle gye list ke*/
+    font-size: 1.3rem;
+}
+ 
+/* padding me a waale me dunga as mai chahta hu ki hover krne pe wo poora hover kru toh a wala element hover ho  */
+#navbar ul li a{
+    color: white;
+    display: block; /*as display inline hoti hai and padding deni h */
+    padding: 3px 22px;
+    border-radius: 22px;
+    text-decoration: none; /*underline hatane k liye*/
+}
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+
+/* ----------------------------------------------navigation bar done--------------------------- */
+/* ab neehe ek section banana h aur usme background lagana h in section element id home */
+
+/* Home Section  */
+#home{
+    /* border: 2px solid greenyellow; */
+    display: flex; /*sab ek row me aa jayenge*/
+    flex-direction: column; /* ab sab column me aayenge*/
+    padding: 3px 200px;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* background laga lete h, aur background lagane k liye harry bhai psuedo selectors ka istemaal krte h before/after + z index + opacity  */
+#home::before{
+    content:"";
+    /* double dot isliye as hum abhi css folder me h isliye bahar aana height: ; */
+    position: absolute;
+    background: url('../bg1.jpg') no-repeat center center/cover;
+    top: 0px;
+    left: 0px;
+    height: 642px;
+    width: 100%;
+    /* content ko iske upar laane k liye use z-index  */
+    z-index: -1;
+    opacity: 0.89; /*light closer to zero..dark k liye close to 1 or more*/
+}
+
+#home h1{
+    color: white;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+
+#home p{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Bree Serif', serif;
+}
+
+/* Services Section */
+#services{
+    display: flex;
+    margin: 34px;
+}
+
+#services .box{
+    border: 2px solid brown;
+    padding: 34px;
+    margin: 3px 31px;
+    border-radius: 28px;
+    background-color: #f9f3f3;
+    margin-bottom: 20px;
+}
+
+#services .box img{
+    height: 160px;
+    display: block;
+    margin: auto;
+    
+}
+#services .box p{
+    font-family: 'Bree Serif', serif;
+}
+
+/* Clients Sections */
+#client-section{
+    position: relative;
+    /* height hatai so tht wo wrap k sath kaam kre  */
+}
+
+#client-section::before{
+    content: "";
+    position:absolute;
+    background: url('../bg.jpg');
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+#client{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.client-item{
+    padding: 34px;
+}
+
+#client img{
+    height: 124px;
+}
+
+/* Contact Section  */
+#contact{
+    position: relative;
+}
+
+#contact::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    background: url('../contact.jpg') no-repeat center center/cover;
+}
+
+#contact-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+
+#contact-box input, 
+#contact-box textarea{
+    width: 100%;
+    border-radius: 9px;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    
+}
+#contact-box form{
+    width: 40%;
+}
+
+#contact-box label{
+    font-size: 1.3rem;
+    font-family: 'Bree Serif', serif;
+}
+
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+/* Utility Classes */
+.h-primary{
+    font-size: 3.8rem;
+    padding: 12px;
+    font-family: 'Bree Serif', serif;
+}
+
+.h-secondary{
+    font-size: 2.3rem;
+    padding: 12px;
+    font-family: 'Bree Serif', serif;
+}
+.btn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color:white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.center{
+    text-align: center;
+}
+
+/* .services-container{
+    margin-top: 80px;
+} */
+
+
+
+
+
